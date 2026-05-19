@@ -1,5 +1,3 @@
-# Standard files to ignore in version control
-
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -76,7 +74,6 @@ target/
 
 # Jupyter Notebook
 .ipynb_checkpoints
-*.ipynb
 
 # IPython
 profile_default/
@@ -125,26 +122,36 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# Data files
-*.csv
-*.json
-*.gz
-*.db
-*.sqlite
-*.sqlite3
-
 # IDE
 .vscode/
 .idea/
 *.swp
 *.swo
 *~
-.DS_Store
 
-# Project specific
+# OS
+.DS_Store
+Thumbs.db
+
+# Project-specific
 data/
-output/
 models/
 *.pkl
 *.joblib
-.env.local
+*.h5
+*.csv
+*.xlsx
+*.json.gz
+*.sqlite
+*.db
+
+# Plots and outputs
+*.png
+*.pdf
+*.jpg
+*.jpeg
+
+# Temporary files
+*.tmp
+*.temp
+.temp/
