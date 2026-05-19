@@ -41,16 +41,48 @@ Projects
    - Performed inverse transformation to interpret cluster characteristics in original feature space
    - Visualized both the data distribution and PCA decomposition
 
-4. Earthquake Damage Prediction in Nepal
+4. Earthquake Damage Prediction in Nepal (Advanced)
    
-   Built a classification model to predict building damage severity following the 2015 Nepal earthquake. Used data from the Kavrepalanchok district, focusing on distinguishing between severe and non-severe damage based on building structural characteristics.
+   Built a comprehensive classification model to predict building damage severity following the 2015 Nepal earthquake, with focus on rigorous model development methodology.
    
-   Key elements:
+   Core Analysis (earthquake_damage_advanced.py):
    - Queried SQLite database to join building structure and damage information
-   - Handled categorical features with one-hot and ordinal encoding
+   - Analyzed class distribution and imbalance characteristics
+   - Three-way stratified split (train/val/test) to preserve class balance
    - Compared Logistic Regression and Decision Tree classifiers
-   - Used validation curves to identify optimal tree depth
-   - Extracted and visualized feature importance from the final model
+   
+   Feature Importance Analysis (feature_importance_analysis.py):
+   - Tree-based importance: How features contribute to split decisions
+   - Permutation importance: How predictions degrade when features are shuffled
+   - Feature group analysis: Understanding importance of structural categories
+   - Business interpretation: What each top feature means for earthquake resilience
+   - Decision tree visualization: Seeing the actual decision logic
+   
+   Hyperparameter Optimization (earthquake_damage_advanced.py):
+   For Decision Trees:
+   - max_depth (5-20): Controls tree complexity and prevents overfitting
+   - min_samples_split (5-20): Prevents splits on very small groups
+   - min_samples_leaf (2-10): Prevents pure leaves that memorize single examples
+   - criterion (gini vs entropy): Different measures of split quality
+   
+   For Logistic Regression:
+   - C (0.001-100): Regularization strength - lower C = simpler model
+   - max_iter (500-1000): Convergence iterations for optimization
+   
+   Grid search explores all combinations using stratified K-Fold cross-validation
+   and F1 score as the optimization metric (better than accuracy for imbalanced data).
+   
+   Cross-Validation Strategy (cross_validation_explanation.py):
+   - Why: Single train/test split is unreliable - results vary with random seed
+   - What: Stratified K-Fold (5 folds) ensures each fold has same class distribution
+   - Metrics used:
+     * F1 Score: Balances precision and recall, primary metric for imbalanced data
+     * ROC-AUC: Performance across all decision thresholds
+     * Balanced Accuracy: Average recall for each class
+     * Precision/Recall: Tradeoff visualization
+   - Interpretation: High variance across folds indicates model is sensitive to data
+   
+   Result: Rigorous, reproducible methodology suitable for production deployment.
 
 5. Brazil and Mexico Real Estate Markets
    
@@ -138,15 +170,19 @@ Specialized:
 Competencies Demonstrated
 --------------------------
 
-Statistical Analysis: I've worked with hypothesis testing, power analysis, and chi-square tests. This includes determining required sample sizes for experiments and calculating statistical significance.
+Rigorous Model Development: The earthquake project demonstrates proper ML methodology including stratified splitting, hyperparameter optimization with cross-validation, and comprehensive evaluation. Not just fitting a model, but building one that generalizes reliably.
 
-Machine Learning: Built both supervised (regression, classification) and unsupervised (clustering) models. Experience with model selection, hyperparameter tuning, and cross-validation strategies.
+Feature Engineering and Analysis: Understanding which features matter and why. The earthquake project analyzes importance through multiple lenses (tree-based, permutation, business interpretation).
+
+Statistical Analysis: Hypothesis testing, power analysis, chi-square tests. Understanding required sample sizes for experiments and calculating statistical significance.
 
 Handling Real-World Challenges: Not just textbook problems. The bankruptcy project specifically demonstrates handling imbalanced data, cost asymmetry in misclassification, and translating statistical models to business value.
 
 Ensemble Methods: Compared multiple approaches (Random Forest, Gradient Boosting, AdaBoost) and understood their different strengths for different problem characteristics.
 
 Model Interpretability: Beyond just "this model gets 95% accuracy". Using SHAP values to understand what features drive predictions and how to explain them to stakeholders.
+
+Hyperparameter Optimization: Grid search with proper cross-validation. Not just accepting defaults but understanding what each parameter controls and why it matters.
 
 Data Engineering: Proficient at data cleaning, handling missing values, feature engineering, and building reusable pipelines. Comfortable working with structured data from databases and unstructured JSON data.
 
@@ -192,6 +228,9 @@ portfolio-projects/
 |   |-- credit_risk_us.py
 |-- earthquake/
 |   |-- earthquake_damage_nepal.py
+|   |-- earthquake_damage_advanced.py
+|   |-- feature_importance_analysis.py
+|   |-- cross_validation_explanation.py
 |-- bankruptcy/
 |   |-- bankruptcy_poland_advanced.py
 |   |-- cost_sensitive_learning.py
@@ -207,11 +246,11 @@ portfolio-projects/
 Key Takeaways
 -------------
 
-This portfolio demonstrates the ability to tackle diverse data science challenges. The projects range from statistical experimentation to predictive modeling to unsupervised learning. They show not just knowledge of algorithms, but understanding of when and how to apply them to real problems.
+This portfolio demonstrates the ability to tackle diverse data science challenges using rigorous methodology. The projects range from statistical experimentation to predictive modeling to unsupervised learning.
 
-I value clean, readable code with appropriate documentation. The ability to move from raw data to actionable insights through careful analysis and visualization is central to my work.
+A key differentiator is the emphasis on proper ML practices: rigorous cross-validation, hyperparameter optimization, feature importance analysis, and translating technical results to business value. This shows not just knowledge of algorithms, but understanding of production-grade data science.
 
-Recent focus on the bankruptcy project shows growing sophistication: not just building models, but understanding their business impact, handling real-world complications like imbalanced data, and providing interpretable insights rather than black-box predictions.
+Recent enhancements show growing sophistication: the earthquake project demonstrates how to build a truly reproducible, generalizable model, while the bankruptcy project shows understanding that accuracy metrics matter less than business outcomes.
 
 
 Contact
