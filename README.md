@@ -62,17 +62,45 @@ Projects
    - Built pipelines with one-hot encoding for categorical variables and standard scaling for numerical ones
    - Compared model performance across different feature sets
 
-6. Poland Bankruptcy Prediction
+6. Poland Bankruptcy Prediction (Advanced Analysis)
    
-   End-to-end machine learning project predicting corporate bankruptcy. Dealt with a highly imbalanced dataset where bankruptcy cases were rare, requiring careful handling through oversampling.
+   End-to-end machine learning project predicting corporate bankruptcy with advanced techniques for handling real-world challenges.
    
-   Workflow:
-   - Loaded compressed JSON data and converted to pandas DataFrames
-   - Identified class imbalance and applied random oversampling
-   - Trained Random Forest classifier with cross-validation
-   - Used GridSearchCV to optimize hyperparameters (max_depth, n_estimators)
-   - Generated confusion matrix and classification reports
-   - Extracted feature importance to identify the strongest bankruptcy predictors
+   This analysis goes beyond basic classification to address practical concerns:
+   
+   Imbalanced Data Handling:
+   - Explored multiple techniques: Random Oversampling, SMOTE (Synthetic Minority Oversampling Technique)
+   - SMOTE creates synthetic examples by interpolating between minority samples, reducing overfitting risk
+   - Demonstrated how imbalance ratios affect model training and evaluation
+   
+   Ensemble Methods Comparison:
+   - Random Forest with class weighting for balanced learning
+   - Gradient Boosting that naturally focuses on hard-to-classify examples
+   - AdaBoost designed specifically for handling difficult cases
+   - Baseline Logistic Regression with cost-sensitive class weighting
+   
+   Model Evaluation for Imbalanced Data:
+   - ROC-AUC: Metric robust to class imbalance
+   - F1 Score: Harmonic mean of precision and recall
+   - Balanced Accuracy: Average recall for each class, not skewed by majority class
+   - Precision-Recall curves more informative than ROC for imbalanced problems
+   
+   Cost-Sensitive Learning:
+   - Different misclassification errors have different business costs
+   - False Negatives (missing bankruptcies) are more costly than False Positives
+   - Optimized decision thresholds based on business metrics, not statistical accuracy
+   - Analyzed how prediction costs vary with classification threshold
+   
+   Model Interpretability:
+   - Feature importance from tree-based models
+   - SHAP (SHapley Additive exPlanations) for detailed prediction explanations
+   - Confusion matrices to understand error patterns
+   - Business impact analysis connecting predictions to financial consequences
+   
+   Files included:
+   - bankruptcy_poland_advanced.py: Core analysis with all ensemble methods and SHAP
+   - cost_sensitive_learning.py: Handling asymmetric misclassification costs
+   - business_metrics.py: Translating model predictions to business value
 
 7. Market Volatility in India
    
@@ -101,7 +129,8 @@ Visualization:
 - plotly: Interactive visualizations
 
 Specialized:
-- imblearn: Handling imbalanced datasets
+- imblearn: Handling imbalanced datasets (SMOTE, oversampling)
+- shap: Model interpretability and feature importance
 - category_encoders: Advanced encoding strategies
 - country_converter: Geographic data mapping
 
@@ -112,6 +141,12 @@ Competencies Demonstrated
 Statistical Analysis: I've worked with hypothesis testing, power analysis, and chi-square tests. This includes determining required sample sizes for experiments and calculating statistical significance.
 
 Machine Learning: Built both supervised (regression, classification) and unsupervised (clustering) models. Experience with model selection, hyperparameter tuning, and cross-validation strategies.
+
+Handling Real-World Challenges: Not just textbook problems. The bankruptcy project specifically demonstrates handling imbalanced data, cost asymmetry in misclassification, and translating statistical models to business value.
+
+Ensemble Methods: Compared multiple approaches (Random Forest, Gradient Boosting, AdaBoost) and understood their different strengths for different problem characteristics.
+
+Model Interpretability: Beyond just "this model gets 95% accuracy". Using SHAP values to understand what features drive predictions and how to explain them to stakeholders.
 
 Data Engineering: Proficient at data cleaning, handling missing values, feature engineering, and building reusable pipelines. Comfortable working with structured data from databases and unstructured JSON data.
 
@@ -134,6 +169,9 @@ To explore these projects:
 
 3. Each project directory is self-contained. Navigate to a project and examine the Python files.
 
+For advanced bankruptcy analysis, install additional dependencies:
+   pip install shap
+
 
 Project Structure
 -----------------
@@ -155,7 +193,9 @@ portfolio-projects/
 |-- earthquake/
 |   |-- earthquake_damage_nepal.py
 |-- bankruptcy/
-|   |-- bankruptcy_poland.py
+|   |-- bankruptcy_poland_advanced.py
+|   |-- cost_sensitive_learning.py
+|   |-- business_metrics.py
 |-- market-analysis/
 |   |-- market_volatility_india.py
 |-- utils.py
@@ -170,6 +210,8 @@ Key Takeaways
 This portfolio demonstrates the ability to tackle diverse data science challenges. The projects range from statistical experimentation to predictive modeling to unsupervised learning. They show not just knowledge of algorithms, but understanding of when and how to apply them to real problems.
 
 I value clean, readable code with appropriate documentation. The ability to move from raw data to actionable insights through careful analysis and visualization is central to my work.
+
+Recent focus on the bankruptcy project shows growing sophistication: not just building models, but understanding their business impact, handling real-world complications like imbalanced data, and providing interpretable insights rather than black-box predictions.
 
 
 Contact
