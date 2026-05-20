@@ -1,170 +1,98 @@
-Portfolio Projects - Data Science & ML
+# Portfolio Projects
 
-Collection of quantitative finance, machine learning, and data science projects demonstrating practical applications 
-of advanced analytics, statistical methods, and real-world problem solving.
+ML, data science, quantitative finance. Production-grade methodology.
 
-Main Portfolio | Individual Projects | Contact
-
----
-
-Projects Overview
-
-1. A/B Testing & Statistical Analysis
-Focus: Hypothesis testing, power analysis, experimental design
-Repository: ab-testing-wqu
-Key Techniques: Chi-square testing, power analysis, contingency tables, geographic visualization
-
-2. Earthquake Damage Prediction
-Focus: Advanced ML methodology, hyperparameter optimization, cross-validation
-Repository: earthquake-damage-prediction
-Key Techniques: GridSearchCV, stratified CV, feature importance, imbalanced data, F1 optimization
-
-3. Poland Bankruptcy Prediction
-Focus: Ensemble methods, SHAP interpretability, cost-sensitive learning
-Repository: bankruptcy-prediction-poland
-Key Techniques: Ensemble methods, SMOTE, SHAP, threshold optimization, cost analysis
-
-4. Buenos Aires Real Estate
-Focus: Regularization, feature selection, model stacking
-Repository: buenos-aires-real-estate
-Key Techniques: Ridge/Lasso/ElasticNet, feature selection methods, model stacking
-
-5. Credit Risk Clustering
-Focus: Unsupervised learning, dimensionality reduction
-Repository: credit-risk-clustering
-Key Techniques: K-Means, PCA, silhouette analysis, cluster profiling
-
-6. Market Volatility Analysis
-Focus: Time series analysis, financial metrics
-Repository: market-volatility-analysis
-Key Techniques: Rolling statistics, volatility modeling, trend analysis
-
-7. Latin America Real Estate
-Focus: Geographic data processing, feature engineering
-Repository: latin-america-real-estate
-Key Techniques: Coordinate extraction, geographic aggregation, pipeline architecture
+[Main Portfolio](https://github.com/Harshit-sys169/portfolio-index) | [Profile](https://github.com/Harshit-sys169)
 
 ---
 
-Competencies Demonstrated
+## Projects (7 Total)
 
-Rigorous Model Development
-- Stratified train/val/test splitting preserving class distribution
-- GridSearchCV hyperparameter optimization with cross-validation
-- Comprehensive evaluation across multiple metrics
-- F1-score optimization for imbalanced data (not accuracy)
+| Project | Focus | Techniques |
+|---------|-------|------------|
+| **Earthquake Damage** | ML methodology | GridSearchCV, stratified CV, feature importance |
+| **Bankruptcy** | Ensemble + SHAP | RF/GB/AdaBoost, SMOTE, cost-sensitive learning |
+| **Buenos Aires Real Estate** | Regularization | Ridge/Lasso/ElasticNet, feature selection, stacking |
+| **Credit Risk** | Unsupervised | K-Means, PCA, silhouette analysis |
+| **Market Volatility** | Time series | Rolling stats, EWMA, trend analysis |
+| **A/B Testing** | Statistics | Power analysis, Chi-square, hypothesis testing |
+| **Latin America Real Estate** | Feature engineering | Coordinate extraction, geographic data, pipelines |
+
+All repos: [github.com/Harshit-sys169](https://github.com/Harshit-sys169)
+
+---
+
+## Skills Demonstrated
+
+**Development Rigor**
+- Stratified train/val/test splits preserving class distribution
+- GridSearchCV with cross-validation
+- Multiple evaluation metrics (F1, ROC-AUC, balanced accuracy, not just accuracy)
 - Generalization analysis and stability testing
 
-Feature Engineering & Analysis
-- Multiple feature importance methods (tree-based, permutation)
-- Domain-specific feature extraction
+**Feature Engineering**
+- Tree-based, permutation, SHAP importance methods
+- Domain-specific extraction
 - Geographic data processing
-- Categorical encoding strategies
-- Pipeline architecture for reproducibility
+- Categorical encoding
+- scikit-learn pipelines
 
-Statistical Analysis
+**Statistical Analysis**
 - Hypothesis testing with power analysis
-- Chi-square tests and significance validation
-- Probability theory applications
+- Chi-square tests, significance validation
 - Sample size calculation
 
-Real-World Problem Solving
-- Imbalanced data: SMOTE, class weighting, appropriate metrics
+**Real-World Problem Solving**
+- Imbalanced data: SMOTE, class weighting, proper metrics
 - High-dimensional data: PCA, feature selection, regularization
-- Missing values and outliers: Imputation, filtering, detection
-- Cost-sensitive learning: Business-aware threshold optimization
-- Business metric translation: Financial impact analysis
+- Missing values/outliers: imputation, filtering, detection
+- Cost-sensitive learning: threshold optimization
+- Business impact translation
 
-Ensemble Methods
-- Random Forest, Gradient Boosting, AdaBoost comparison
+**Ensemble Methods**
+- RF, GB, AdaBoost comparison & analysis
 - Stacking and voting classifiers
-- Diversity analysis for ensemble performance
-- Appropriate algorithm selection by problem characteristics
+- Diversity analysis
 
-Model Interpretability
-- SHAP values for prediction explanations
-- Feature importance across methods (tree-based, permutation, SHAP)
+**Interpretability**
+- SHAP prediction explanations
+- Feature importance (tree-based, permutation, SHAP)
 - Confusion matrix analysis
 - ROC/Precision-Recall curves
 - Business-driven interpretation
 
-Data Engineering
-- pandas and numpy data manipulation
-- scikit-learn pipeline architecture
-- ColumnTransformer for mixed feature types
-- SQLite and MongoDB integration
-- Reusable component design
+---
+
+## Tech
+
+**Core ML:** scikit-learn, pandas, numpy, scipy, statsmodels  
+**Imbalanced Data:** imblearn, SMOTE  
+**Interpretability:** SHAP, feature_importance  
+**Databases:** SQLite, PostgreSQL, MongoDB  
+**Viz:** matplotlib, seaborn, plotly  
+**Specialized:** yfinance, category_encoders, sqlalchemy  
 
 ---
 
-Technology Stack
+## Principles
 
-Core ML & Data
-- Python: pandas, numpy, scikit-learn
-- Statistics: scipy, statsmodels
-- Advanced: imblearn, SHAP, category_encoders
+**Methodology over algorithms** — validation strategy matters more than technique choice.
 
-Databases
-- Relational: SQLite, PostgreSQL
-- Document: MongoDB
-- ORMs: SQLAlchemy, Prisma
+**Business reality drives decisions** — accuracy without impact is academic.
 
-Visualization
-- Static: matplotlib, seaborn
-- Interactive: plotly
-- Geographic: country_converter
+**Imbalanced data is normal** — F1/ROC-AUC/balanced-accuracy matter, not accuracy.
 
-Specialized Libraries
-- yfinance: Financial data
-- SHAP: Model interpretability
-- imblearn: Imbalanced data handling
+**Interpretability required** — black boxes don't deploy.
+
+**Feature engineering wins** — domain understanding beats algorithm tuning.
+
+**Proper evaluation essential** — cross-validation > single train/test split.
 
 ---
 
-Key Principles
+11 repos total | 8 ML/data science | 1 SaaS | 20+ techniques | Finance, real estate, insurance, tech
 
-Methodology Over Algorithms: Proper train/test splitting, cross-validation, and hyperparameter tuning matter 
-more than algorithm selection. Each project demonstrates production-grade development practices.
+See portfolio index for complete overview: [portfolio-index](https://github.com/Harshit-sys169/portfolio-index)
 
-Business Reality Drives Decisions: Technical accuracy without business relevance is academic. Every project 
-translates model outputs to financial or organizational impact.
-
-Imbalanced Data is Normal: Most real ML problems are imbalanced. Standard accuracy is misleading; proper 
-metrics (F1, ROC-AUC, balanced accuracy) are essential.
-
-Interpretability Drives Adoption: Complex black-box models have limited real-world adoption. SHAP values, 
-feature importance, and business translations are core requirements.
-
-Feature Engineering Wins: Domain understanding and thoughtful feature engineering often outperforms algorithm tuning.
-
-Proper Evaluation Non-Negotiable: Cross-validation estimates are more reliable than single train/test splits. 
-Variance across folds indicates model sensitivity.
-
----
-
-Statistics
-
-Total Projects: 7
-Advanced Techniques: 25+
-Domains: Finance, Real Estate, Insurance, Statistics, Market Analysis
-Focus: Production-grade methodology, interpretability, business impact
-
----
-
-For Complete Portfolio
-
-View the master portfolio index for comprehensive documentation, integrated SaaS platform, and all 11 public projects:
-
-Portfolio Index: portfolio-index repository
-
----
-
-Contact
-
-GitHub: @Harshit-sys169
-Portfolio: View All Projects
-Interests: Machine learning systems, data science, quantitative finance, real-world problem solving
-
----
-
-Last Updated: May 2026 | Maintained with production-grade standards
+Contact: f20240474@pilani.bits-pilani.ac.in  
+Last updated: May 2026
