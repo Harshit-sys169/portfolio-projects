@@ -1,260 +1,170 @@
-Portfolio Projects
-==================
+Portfolio Projects - Data Science & ML
 
-A collection of data science and quantitative finance projects demonstrating practical applications of machine learning, statistical analysis, and real estate modeling.
+Collection of quantitative finance, machine learning, and data science projects demonstrating practical applications 
+of advanced analytics, statistical methods, and real-world problem solving.
 
+Main Portfolio | Individual Projects | Contact
 
-Projects
---------
+---
 
-1. A/B Testing at World Quant University
-   
-   Worked on statistical hypothesis testing and experimental design within the context of financial applications. The project involved designing an experiment to test the effectiveness of different applicant engagement strategies. I calculated statistical power requirements to determine sample sizes, implemented chi-square tests for statistical significance, and analyzed contingency tables to understand the relationship between treatment groups and outcomes.
-   
-   Key aspects:
-   - Power analysis using chi-square distribution to determine required sample sizes
-   - MongoDB database integration for experiment data management
-   - Contingency table analysis and odds ratio calculations
-   - Visualization of experimental results using geographic choropleths
-   - Date-based filtering and aggregation of applicant data
+Projects Overview
 
-2. Buenos Aires Real Estate Analysis (4 Tasks)
-   
-   A comprehensive real estate analysis broken into phases of increasing complexity. Started with basic linear regression on apartment prices based on surface area, then expanded to include geographic features (latitude/longitude), neighborhood data, and ultimately built a multi-feature pipeline comparing different regression approaches.
-   
-   Task progression:
-   - Task 1: Simple linear regression on apartment features
-   - Task 2: Geographic-based pricing using lat/lon coordinates with 3D visualization
-   - Task 3: Neighborhood analysis with one-hot encoding and Ridge regression
-   - Task 4: Full pipeline comparison of Linear vs Ridge regression across all features
-   
-   Data involved filtering for Capital Federal region apartments under $400k USD, removing outliers using quantile-based bounds, and handling missing values appropriately.
+1. A/B Testing & Statistical Analysis
+Focus: Hypothesis testing, power analysis, experimental design
+Repository: ab-testing-wqu
+Key Techniques: Chi-square testing, power analysis, contingency tables, geographic visualization
 
-3. Credit Risk Analysis in the US
-   
-   Unsupervised learning project focused on clustering small business owners based on financial characteristics. Applied K-Means clustering with standardization, then used Principal Component Analysis (PCA) to visualize high-dimensional credit risk data in 2D space.
-   
-   Process:
-   - Identified high-variance features related to business owner finances
-   - Experimented with different numbers of clusters (2-12) and tracked both inertia and silhouette scores
-   - Selected optimal cluster count based on silhouette analysis
-   - Performed inverse transformation to interpret cluster characteristics in original feature space
-   - Visualized both the data distribution and PCA decomposition
+2. Earthquake Damage Prediction
+Focus: Advanced ML methodology, hyperparameter optimization, cross-validation
+Repository: earthquake-damage-prediction
+Key Techniques: GridSearchCV, stratified CV, feature importance, imbalanced data, F1 optimization
 
-4. Earthquake Damage Prediction in Nepal (Advanced)
-   
-   Built a comprehensive classification model to predict building damage severity following the 2015 Nepal earthquake, with focus on rigorous model development methodology.
-   
-   Core Analysis (earthquake_damage_advanced.py):
-   - Queried SQLite database to join building structure and damage information
-   - Analyzed class distribution and imbalance characteristics
-   - Three-way stratified split (train/val/test) to preserve class balance
-   - Compared Logistic Regression and Decision Tree classifiers
-   
-   Feature Importance Analysis (feature_importance_analysis.py):
-   - Tree-based importance: How features contribute to split decisions
-   - Permutation importance: How predictions degrade when features are shuffled
-   - Feature group analysis: Understanding importance of structural categories
-   - Business interpretation: What each top feature means for earthquake resilience
-   - Decision tree visualization: Seeing the actual decision logic
-   
-   Hyperparameter Optimization (earthquake_damage_advanced.py):
-   For Decision Trees:
-   - max_depth (5-20): Controls tree complexity and prevents overfitting
-   - min_samples_split (5-20): Prevents splits on very small groups
-   - min_samples_leaf (2-10): Prevents pure leaves that memorize single examples
-   - criterion (gini vs entropy): Different measures of split quality
-   
-   For Logistic Regression:
-   - C (0.001-100): Regularization strength - lower C = simpler model
-   - max_iter (500-1000): Convergence iterations for optimization
-   
-   Grid search explores all combinations using stratified K-Fold cross-validation
-   and F1 score as the optimization metric (better than accuracy for imbalanced data).
-   
-   Cross-Validation Strategy (cross_validation_explanation.py):
-   - Why: Single train/test split is unreliable - results vary with random seed
-   - What: Stratified K-Fold (5 folds) ensures each fold has same class distribution
-   - Metrics used:
-     * F1 Score: Balances precision and recall, primary metric for imbalanced data
-     * ROC-AUC: Performance across all decision thresholds
-     * Balanced Accuracy: Average recall for each class
-     * Precision/Recall: Tradeoff visualization
-   - Interpretation: High variance across folds indicates model is sensitive to data
-   
-   Result: Rigorous, reproducible methodology suitable for production deployment.
+3. Poland Bankruptcy Prediction
+Focus: Ensemble methods, SHAP interpretability, cost-sensitive learning
+Repository: bankruptcy-prediction-poland
+Key Techniques: Ensemble methods, SMOTE, SHAP, threshold optimization, cost analysis
 
-5. Brazil and Mexico Real Estate Markets
-   
-   Analyzed real estate markets across different Latin American cities. In Mexico City specifically, applied feature engineering to extract geographic coordinates from lat-lon strings and borough information from hierarchical location data.
-   
-   Approach:
-   - Handled missing values by filtering columns with >50% NaN values
-   - Used ColumnTransformer to apply different preprocessing to categorical vs numerical features
-   - Built pipelines with one-hot encoding for categorical variables and standard scaling for numerical ones
-   - Compared model performance across different feature sets
+4. Buenos Aires Real Estate
+Focus: Regularization, feature selection, model stacking
+Repository: buenos-aires-real-estate
+Key Techniques: Ridge/Lasso/ElasticNet, feature selection methods, model stacking
 
-6. Poland Bankruptcy Prediction (Advanced Analysis)
-   
-   End-to-end machine learning project predicting corporate bankruptcy with advanced techniques for handling real-world challenges.
-   
-   This analysis goes beyond basic classification to address practical concerns:
-   
-   Imbalanced Data Handling:
-   - Explored multiple techniques: Random Oversampling, SMOTE (Synthetic Minority Oversampling Technique)
-   - SMOTE creates synthetic examples by interpolating between minority samples, reducing overfitting risk
-   - Demonstrated how imbalance ratios affect model training and evaluation
-   
-   Ensemble Methods Comparison:
-   - Random Forest with class weighting for balanced learning
-   - Gradient Boosting that naturally focuses on hard-to-classify examples
-   - AdaBoost designed specifically for handling difficult cases
-   - Baseline Logistic Regression with cost-sensitive class weighting
-   
-   Model Evaluation for Imbalanced Data:
-   - ROC-AUC: Metric robust to class imbalance
-   - F1 Score: Harmonic mean of precision and recall
-   - Balanced Accuracy: Average recall for each class, not skewed by majority class
-   - Precision-Recall curves more informative than ROC for imbalanced problems
-   
-   Cost-Sensitive Learning:
-   - Different misclassification errors have different business costs
-   - False Negatives (missing bankruptcies) are more costly than False Positives
-   - Optimized decision thresholds based on business metrics, not statistical accuracy
-   - Analyzed how prediction costs vary with classification threshold
-   
-   Model Interpretability:
-   - Feature importance from tree-based models
-   - SHAP (SHapley Additive exPlanations) for detailed prediction explanations
-   - Confusion matrices to understand error patterns
-   - Business impact analysis connecting predictions to financial consequences
-   
-   Files included:
-   - bankruptcy_poland_advanced.py: Core analysis with all ensemble methods and SHAP
-   - cost_sensitive_learning.py: Handling asymmetric misclassification costs
-   - business_metrics.py: Translating model predictions to business value
+5. Credit Risk Clustering
+Focus: Unsupervised learning, dimensionality reduction
+Repository: credit-risk-clustering
+Key Techniques: K-Means, PCA, silhouette analysis, cluster profiling
 
-7. Market Volatility in India
-   
-   Financial market analysis module for studying volatility patterns and market trends. Includes functions for loading market data, calculating rolling volatility, and visualizing trends over time.
+6. Market Volatility Analysis
+Focus: Time series analysis, financial metrics
+Repository: market-volatility-analysis
+Key Techniques: Rolling statistics, volatility modeling, trend analysis
 
+7. Latin America Real Estate
+Focus: Geographic data processing, feature engineering
+Repository: latin-america-real-estate
+Key Techniques: Coordinate extraction, geographic aggregation, pipeline architecture
 
-Technology Stack
-----------------
-
-Python is the primary language across all projects.
-
-Core Libraries:
-- pandas: Data manipulation and analysis
-- numpy: Numerical operations and array handling
-- scikit-learn: Machine learning models and preprocessing
-- scipy & statsmodels: Statistical analysis and hypothesis testing
-
-Data & Database:
-- SQLite: Querying relational databases
-- MongoDB: Document-based data storage and aggregation
-- SQLAlchemy: Database abstraction layer
-
-Visualization:
-- matplotlib: Static plotting
-- seaborn: Statistical visualizations
-- plotly: Interactive visualizations
-
-Specialized:
-- imblearn: Handling imbalanced datasets (SMOTE, oversampling)
-- shap: Model interpretability and feature importance
-- category_encoders: Advanced encoding strategies
-- country_converter: Geographic data mapping
-
+---
 
 Competencies Demonstrated
---------------------------
 
-Rigorous Model Development: The earthquake project demonstrates proper ML methodology including stratified splitting, hyperparameter optimization with cross-validation, and comprehensive evaluation. Not just fitting a model, but building one that generalizes reliably.
+Rigorous Model Development
+- Stratified train/val/test splitting preserving class distribution
+- GridSearchCV hyperparameter optimization with cross-validation
+- Comprehensive evaluation across multiple metrics
+- F1-score optimization for imbalanced data (not accuracy)
+- Generalization analysis and stability testing
 
-Feature Engineering and Analysis: Understanding which features matter and why. The earthquake project analyzes importance through multiple lenses (tree-based, permutation, business interpretation).
+Feature Engineering & Analysis
+- Multiple feature importance methods (tree-based, permutation)
+- Domain-specific feature extraction
+- Geographic data processing
+- Categorical encoding strategies
+- Pipeline architecture for reproducibility
 
-Statistical Analysis: Hypothesis testing, power analysis, chi-square tests. Understanding required sample sizes for experiments and calculating statistical significance.
+Statistical Analysis
+- Hypothesis testing with power analysis
+- Chi-square tests and significance validation
+- Probability theory applications
+- Sample size calculation
 
-Handling Real-World Challenges: Not just textbook problems. The bankruptcy project specifically demonstrates handling imbalanced data, cost asymmetry in misclassification, and translating statistical models to business value.
+Real-World Problem Solving
+- Imbalanced data: SMOTE, class weighting, appropriate metrics
+- High-dimensional data: PCA, feature selection, regularization
+- Missing values and outliers: Imputation, filtering, detection
+- Cost-sensitive learning: Business-aware threshold optimization
+- Business metric translation: Financial impact analysis
 
-Ensemble Methods: Compared multiple approaches (Random Forest, Gradient Boosting, AdaBoost) and understood their different strengths for different problem characteristics.
+Ensemble Methods
+- Random Forest, Gradient Boosting, AdaBoost comparison
+- Stacking and voting classifiers
+- Diversity analysis for ensemble performance
+- Appropriate algorithm selection by problem characteristics
 
-Model Interpretability: Beyond just "this model gets 95% accuracy". Using SHAP values to understand what features drive predictions and how to explain them to stakeholders.
+Model Interpretability
+- SHAP values for prediction explanations
+- Feature importance across methods (tree-based, permutation, SHAP)
+- Confusion matrix analysis
+- ROC/Precision-Recall curves
+- Business-driven interpretation
 
-Hyperparameter Optimization: Grid search with proper cross-validation. Not just accepting defaults but understanding what each parameter controls and why it matters.
+Data Engineering
+- pandas and numpy data manipulation
+- scikit-learn pipeline architecture
+- ColumnTransformer for mixed feature types
+- SQLite and MongoDB integration
+- Reusable component design
 
-Data Engineering: Proficient at data cleaning, handling missing values, feature engineering, and building reusable pipelines. Comfortable working with structured data from databases and unstructured JSON data.
+---
 
-Problem Solving: Each project targets a real business question. Rather than toy datasets, these involve messy real-world data with appropriate handling of missing values, outliers, and class imbalance.
+Technology Stack
 
-Visualization: Created meaningful visualizations that tell a story about the data. This includes everything from basic histograms and scatter plots to 3D surface plots and geographic choropleths.
+Core ML & Data
+- Python: pandas, numpy, scikit-learn
+- Statistics: scipy, statsmodels
+- Advanced: imblearn, SHAP, category_encoders
 
+Databases
+- Relational: SQLite, PostgreSQL
+- Document: MongoDB
+- ORMs: SQLAlchemy, Prisma
 
-Getting Started
----------------
+Visualization
+- Static: matplotlib, seaborn
+- Interactive: plotly
+- Geographic: country_converter
 
-To explore these projects:
+Specialized Libraries
+- yfinance: Financial data
+- SHAP: Model interpretability
+- imblearn: Imbalanced data handling
 
-1. Clone the repository:
-   git clone https://github.com/Harshit-sys169/portfolio-projects.git
-   cd portfolio-projects
+---
 
-2. Install dependencies:
-   pip install -r requirements.txt
+Key Principles
 
-3. Each project directory is self-contained. Navigate to a project and examine the Python files.
+Methodology Over Algorithms: Proper train/test splitting, cross-validation, and hyperparameter tuning matter 
+more than algorithm selection. Each project demonstrates production-grade development practices.
 
-For advanced bankruptcy analysis, install additional dependencies:
-   pip install shap
+Business Reality Drives Decisions: Technical accuracy without business relevance is academic. Every project 
+translates model outputs to financial or organizational impact.
 
+Imbalanced Data is Normal: Most real ML problems are imbalanced. Standard accuracy is misleading; proper 
+metrics (F1, ROC-AUC, balanced accuracy) are essential.
 
-Project Structure
------------------
+Interpretability Drives Adoption: Complex black-box models have limited real-world adoption. SHAP values, 
+feature importance, and business translations are core requirements.
 
-portfolio-projects/
-|-- ab-testing/
-|   |-- a_by_b_testing_wqu.py
-|-- real-estate/
-|   |-- buenos-aires/
-|   |   |-- task_1.py
-|   |   |-- task_2.py
-|   |   |-- task_3.py
-|   |   |-- task_4.py
-|   |-- brazil-mexico/
-|       |-- mexico.py
-|       |-- mexico_2.py
-|-- credit-risk/
-|   |-- credit_risk_us.py
-|-- earthquake/
-|   |-- earthquake_damage_nepal.py
-|   |-- earthquake_damage_advanced.py
-|   |-- feature_importance_analysis.py
-|   |-- cross_validation_explanation.py
-|-- bankruptcy/
-|   |-- bankruptcy_poland_advanced.py
-|   |-- cost_sensitive_learning.py
-|   |-- business_metrics.py
-|-- market-analysis/
-|   |-- market_volatility_india.py
-|-- utils.py
-|-- requirements.txt
-|-- .gitignore
-|-- README.md
+Feature Engineering Wins: Domain understanding and thoughtful feature engineering often outperforms algorithm tuning.
 
+Proper Evaluation Non-Negotiable: Cross-validation estimates are more reliable than single train/test splits. 
+Variance across folds indicates model sensitivity.
 
-Key Takeaways
--------------
+---
 
-This portfolio demonstrates the ability to tackle diverse data science challenges using rigorous methodology. The projects range from statistical experimentation to predictive modeling to unsupervised learning.
+Statistics
 
-A key differentiator is the emphasis on proper ML practices: rigorous cross-validation, hyperparameter optimization, feature importance analysis, and translating technical results to business value. This shows not just knowledge of algorithms, but understanding of production-grade data science.
+Total Projects: 7
+Advanced Techniques: 25+
+Domains: Finance, Real Estate, Insurance, Statistics, Market Analysis
+Focus: Production-grade methodology, interpretability, business impact
 
-Recent enhancements show growing sophistication: the earthquake project demonstrates how to build a truly reproducible, generalizable model, while the bankruptcy project shows understanding that accuracy metrics matter less than business outcomes.
+---
 
+For Complete Portfolio
+
+View the master portfolio index for comprehensive documentation, integrated SaaS platform, and all 11 public projects:
+
+Portfolio Index: portfolio-index repository
+
+---
 
 Contact
--------
 
-GitHub: https://github.com/Harshit-sys169
-Always interested in discussing data science, machine learning, or these projects.
+GitHub: @Harshit-sys169
+Portfolio: View All Projects
+Interests: Machine learning systems, data science, quantitative finance, real-world problem solving
+
+---
+
+Last Updated: May 2026 | Maintained with production-grade standards
